@@ -58,21 +58,14 @@ async def convert_and_send(
         resend.Emails.send({
             "from": "MarkItDown <noreply@meriane.de>",
             "to": [email],
-            "subject": f"Votre fichier converti : {md_filename}",
+            "subject": f"Your converted file: {md_filename}",
             "html": f"""
                 <div style="font-family:sans-serif;max-width:600px;margin:auto;padding:2rem;">
-                    <h2 style="color:#1a1a1a;">Votre fichier est prêt ✓</h2>
-                    <p style="color:#555;">
-                        Le fichier <strong>{file.filename}</strong> 
-                        a été converti en Markdown.
-                    </p>
-                    <p style="color:#555;">
-                        Vous trouverez <strong>{md_filename}</strong> en pièce jointe.
-                    </p>
+                    <h2 style="color:#1a1a1a;">Your file is ready ✓</h2>
+                    <p style="color:#555;">The file <strong>{file.filename}</strong> has been converted to Markdown.</p>
+                    <p style="color:#555;">You'll find <strong>{md_filename}</strong> attached to this email.</p>
                     <hr style="border:none;border-top:1px solid #eee;margin:1.5rem 0;">
-                    <p style="color:#999;font-size:12px;">
-                        Converti via MarkItDown · meriane.de
-                    </p>
+                    <p style="color:#999;font-size:12px;">Converted via MarkItDown · meriane.de</p>
                 </div>
             """,
             "attachments": [{
